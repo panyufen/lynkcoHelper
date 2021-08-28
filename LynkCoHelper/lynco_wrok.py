@@ -52,6 +52,7 @@ class lynco_wrok(threading.Thread):
 
         # 先获取用户信息，打印用户余额
         response = self.lynkco_app_request.member_info(self.userinfo['centerTokenDto']['token'], self.userinfo['centerUserInfoDto']['id'])
+        print(response)
         if response['code'] != 'success':
             print("APP端操作前用户：" + self.account['username'] + "获取用户信息失败 " + time.strftime('%Y-%m-%d %H:%M:%S'))
         else:
